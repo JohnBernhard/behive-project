@@ -1,0 +1,41 @@
+/* src/components/Sidebar.css */
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background-color: #212529;
+}
+
+#sidebar .nav-link {
+    color: #adb5bd;
+    padding: 15px;
+    font-size: 1.1em;
+
+    /* LINHAS ADICIONADAS PARA O ALINHAMENTO */
+    display: flex;
+    align-items: center;
+}
+
+#sidebar .nav-link:hover {
+    background-color: #495057;
+    color: #fff;
+}
+
+#sidebar .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Garante que o ícone tenha um espaçamento consistente */
+#sidebar .nav-link svg {
+    margin-right: 0.75rem; /* Equivalente ao me-2 do bootstrap */
+    min-width: 20px; /* Garante que o ícone ocupe espaço */
+    text-align: center;
+}
