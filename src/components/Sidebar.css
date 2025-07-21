@@ -1,30 +1,39 @@
 /* src/components/Sidebar.css */
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background-color: #343a40;
+    min-width: 100px; /* Largura reduzida para um visual de ícones */
+    max-width: 100px;
+    background-color: #212529; /* Um preto um pouco mais suave */
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background-color: #212529;
+    padding: 20px 0;
+    border-bottom: 1px solid #495057;
+}
+
+#sidebar .sidebar-header h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
 }
 
 #sidebar .nav-link {
     color: #adb5bd;
-    padding: 15px;
-    font-size: 1.1em;
-
-    /* LINHAS ADICIONADAS PARA O ALINHAMENTO */
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.8rem; /* Fonte menor para o texto abaixo do ícone */
+    
+    /* --- MÁGICA DA CENTRALIZAÇÃO --- */
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Organiza os itens em coluna (ícone em cima, texto embaixo) */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center;/* Centraliza verticalmente */
+    gap: 0.5rem; /* Espaço entre o ícone e o texto */
 }
 
 #sidebar .nav-link:hover {
-    background-color: #495057;
+    background-color: #343a40;
     color: #fff;
 }
 
@@ -33,9 +42,7 @@
     color: #fff;
 }
 
-/* Garante que o ícone tenha um espaçamento consistente */
-#sidebar .nav-link svg {
-    margin-right: 0.75rem; /* Equivalente ao me-2 do bootstrap */
-    min-width: 20px; /* Garante que o ícone ocupe espaço */
-    text-align: center;
+/* Oculta o texto caso a sidebar fique muito pequena no futuro */
+#sidebar .nav-link span {
+    display: block;
 }
