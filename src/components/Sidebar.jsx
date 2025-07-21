@@ -1,11 +1,18 @@
 // src/components/Sidebar.jsx
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // 1. Importe o NavLink
-import { FaTachometerAlt, FaBoxOpen, FaShoppingCart, FaUsers, FaChartLine, FaSignOutAlt, FaCogs, FaCalendar, FaCalendarDay } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import { 
+  FaTachometerAlt, 
+  FaBoxOpen, 
+  FaShoppingCart, 
+  FaUsers, 
+  FaChartLine, 
+  FaSignOutAlt, 
+  FaHive // Novo ícone para a marca
+} from 'react-icons/fa';
 import './Sidebar.css';
 
 const Sidebar = () => {
-  // 3. Função para definir a classe do link ativo
   const getNavLinkClass = ({ isActive }) => {
     return isActive ? 'nav-link active' : 'nav-link';
   };
@@ -13,31 +20,46 @@ const Sidebar = () => {
   return (
     <nav id="sidebar" className="d-flex flex-column p-0">
       <div className="sidebar-header text-center">
-        <h3><FaCogs className="me-2" />Meu Painel</h3>
+        <FaHive size="2em" /> {/* Ícone da marca */}
+        <h3 className="mt-2">BeHive</h3>
       </div>
 
       <ul className="nav flex-column flex-grow-1">
-        {/* 2. Substitua <a> por <NavLink> e href por to */}
         <li className="nav-item">
-          <NavLink to="/" className={getNavLinkClass}><FaTachometerAlt /> Dashboard</NavLink>
+          <NavLink to="/" className={getNavLinkClass}>
+            <FaTachometerAlt size="1.5em" />
+            <span>Dashboard</span>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/Devolucao" className={getNavLinkClass}><FaBoxOpen /> Devolução</NavLink>
+          <NavLink to="/Devolucao" className={getNavLinkClass}>
+            <FaBoxOpen size="1.5em" />
+            <span>Devolução</span>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/JornadaLiquida" className={getNavLinkClass}><FaUsers /> Jornada Líquida</NavLink>
+          <NavLink to="/JornadaLiquida" className={getNavLinkClass}>
+            <FaUsers size="1.5em" />
+            <span>Jornada Líquida</span>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/Produtividade" className={getNavLinkClass}><FaShoppingCart /> Produtividade</NavLink>
+          <NavLink to="/Produtividade" className={getNavLinkClass}>
+            <FaShoppingCart size="1.5em" />
+            <span>Produtividade</span>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/Relatos" className={getNavLinkClass}><FaChartLine /> Relatos</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to="/Calendario" className={getNavLinkClass}><FaCalendarDay /> Calendário</NavLink>
+          <NavLink to="/Relatos" className={getNavLinkClass}>
+            <FaChartLine size="1.5em" />
+            <span>Relatos</span>
+          </NavLink>
         </li>
         <li className="nav-item mt-auto">
-          <NavLink to="/sair" className={getNavLinkClass}><FaSignOutAlt /> Sair</NavLink>
+          <NavLink to="/sair" className={getNavLinkClass}>
+            <FaSignOutAlt size="1.5em" />
+            <span>Sair</span>
+          </NavLink>
         </li>
       </ul>
     </nav>
